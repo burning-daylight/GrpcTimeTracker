@@ -11,7 +11,7 @@ package timetrack;
 service TimeTracker{
 
 // Get All
-rpc GetAll (google.protobuf.Empty) returns (GetAllResponse) {}
+rpc GetAll (GetAllRequest) returns (GetAllResponse) {}
 
 // Get Single
 rpc GetSingle (GetSingleRequest) returns (ItemReply) {}
@@ -22,6 +22,9 @@ rpc Update (UpdateRequest) returns (ItemReply) {}
 // Insert
 rpc Insert (InsertRequest) returns (ItemReply) {}
 
+// Delete
+rpc Delete (GetSingleRequest) returns (ItemReply) {}
+
 }
 
 message GetAllRequest{ }
@@ -31,7 +34,7 @@ message GetAllResponse{
 }
 
 message GetSingleRequest{
-	int id = 1;
+	int32 id = 1;
 }
 
 message InsertRequest{
@@ -40,13 +43,13 @@ message InsertRequest{
 }
 
 message UpdateRequest{
-	int id = 1;
+	int32 id = 1;
 	string title = 2;
 	google.protobuf.Duration timespent = 3;
 }
 
 message ItemReply{
-	int id = 1;
+	int32 id = 1;
 	string title = 2;
 	google.protobuf.Duration timespent = 3;
 }
