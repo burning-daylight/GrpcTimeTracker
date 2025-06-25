@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrpcTimeTrackerReaderClient", "GrpcTimeTrackerReaderClient\GrpcTimeTrackerReaderClient.csproj", "{2C49A89D-462A-4E88-9299-03E7BF50150B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C49A89D-462A-4E88-9299-03E7BF50150B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C49A89D-462A-4E88-9299-03E7BF50150B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C49A89D-462A-4E88-9299-03E7BF50150B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C49A89D-462A-4E88-9299-03E7BF50150B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6AE3EC24-0878-4B07-AACA-4FB0BF9E4093}
+	EndGlobalSection
+EndGlobal
