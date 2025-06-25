@@ -8,7 +8,8 @@ ActiveWindowTracker tracker = new ActiveWindowTracker();
 
 while (isRunning)
 {
-    Console.WriteLine("Type 'run' to run writer service\n" +
+    Console.WriteLine("\n-------------------------------------------------------\n" +
+        "Type 'run' to run writer service\n" +
         "Type 'stop' to stop writer service\n" +
         "Type 'exit' to exit the app");
     var read = Console.ReadLine();
@@ -18,12 +19,12 @@ while (isRunning)
             if (!tracker.IsRunning)
             {
                 tracker.Run();
-                Console.WriteLine("Writer service is running\n");
+                Console.WriteLine("Writer service is RUNNING.\n");
             }
             break;
         case "stop":
             tracker.Stop();
-            Console.WriteLine("Writer service is stopped\n\n");
+            Console.WriteLine("Writer service is STOPPED.\n\n");
             break;
         case "exit":
             tracker.Stop();
@@ -32,5 +33,5 @@ while (isRunning)
     }
 }
 
-Console.WriteLine("\nWrite to DB is stoped. Press any key to exit...");
+Console.WriteLine("\nWrite to DB is stoped. Press any key to exit...\n\n");
 Console.ReadLine();
