@@ -20,6 +20,20 @@ public class TimeTrackService : TimeTracker.TimeTrackerBase
         if (request.Title == string.Empty)
             throw new RpcException(new Status(StatusCode.InvalidArgument, "Please, supply a valid object"));
 
+        // Check if item already exists. If yes - Update it
+        var items = await GetAll(new GetAllRequest(), context);
+        if (items != null)
+        {
+            var t = items.Items.FirstOrDefault(x => x.Title == request.Title);
+            if (t != null)
+                return await Update(new UpdateRequest
+                {
+                    Id = t.Id,
+                    Title = request.Title,
+                    Timespent = t.Timespent + request.Timespent,
+                }, context);
+        }
+
         var item = new ActiveItem { Title = request.Title, TimeSpent = request.Timespent.ToTimeSpan() }; 
 
         await _dbContext.AddAsync(item);
