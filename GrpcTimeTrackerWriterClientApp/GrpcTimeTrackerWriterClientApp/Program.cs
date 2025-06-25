@@ -6,12 +6,14 @@ using GrpcTimeTrackerWriterClientApp;
 bool isRunning = true;
 ActiveWindowTracker tracker = new ActiveWindowTracker();
 
-while (isRunning)
-{
-    Console.WriteLine("\n-------------------------------------------------------\n" +
+Console.WriteLine("\n-------------------------------------------------------\n" +
         "Type 'run' to run writer service\n" +
         "Type 'stop' to stop writer service\n" +
         "Type 'exit' to exit the app");
+
+while (isRunning)
+{
+    Console.WriteLine("Input command:");
     var read = Console.ReadLine();
     switch (read)
     {
