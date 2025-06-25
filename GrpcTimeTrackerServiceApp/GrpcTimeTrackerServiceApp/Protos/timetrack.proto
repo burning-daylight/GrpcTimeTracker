@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+import "google/protobuf/duration.proto";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+
+option csharp_namespace = "GrpcTimeTrackerServiceApp";
+
+package timetrack;
+
+service TimeTracker{
+
+// Get All
+rpc GetAll (google.protobuf.Empty) returns (GetAllResponse) {}
+
+// Get Single
+rpc GetSingle (GetSingleRequest) returns (ItemReply) {}
+
+// Update
+rpc Update (UpdateRequest) returns (ItemReply) {}
+
+// Insert
+rpc Insert (InsertRequest) returns (ItemReply) {}
+
+}
+
+message GetAllRequest{ }
+
+message GetAllResponse{
+	repeated ItemReply Items = 1;
+}
+
+message GetSingleRequest{
+	int id = 1;
+}
+
+message InsertRequest{
+	string title = 1;
+	google.protobuf.Duration timespent = 2;
+}
+
+message UpdateRequest{
+	int id = 1;
+	string title = 2;
+	google.protobuf.Duration timespent = 3;
+}
+
+message ItemReply{
+	int id = 1;
+	string title = 2;
+	google.protobuf.Duration timespent = 3;
+}
